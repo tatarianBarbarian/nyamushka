@@ -1,5 +1,14 @@
+@font-face {
+  font-family: 'Exo';
+  src: local('Exo 2.0'),
+       url('./Exo2.0-Thin.otf') format("opentype");
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  box-sizing: border-box;
+  background: url(bg.png) no-repeat;
+  background-size: cover;
 }
+
