@@ -15,10 +15,36 @@
     padding: 20px 50px;
     cursor: pointer;
     margin-bottom: 15px;
+    transition: transform .3s;
+}
+
+.product__main:hover {
+    transform: scale(1.01);
+}
+
+.product__main:active {
+    transform: scale(0.96);
 }
 
 .product__main--selected {
+    transform: scale(0.96);
     background-image: url(./Photo2.png);
+}
+
+.product__main--selected:hover {
+    transform: scale(0.96);
+}
+
+.product__main--selected:active {
+    transform: scale(0.95);
+}
+
+.product__main--pushed {
+    transform: scale(0.96);
+}
+
+.product__main--pushed:hover {
+    transform: scale(0.96);
 }
 
 .product__slogan {
