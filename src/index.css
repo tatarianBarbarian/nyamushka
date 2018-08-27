@@ -4,6 +4,12 @@
        url('./Exo2.0-Thin.otf') format("opentype");
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -12,3 +18,39 @@ body {
   background-size: cover;
 }
 
+.u-c--white {
+  color: white;
+}
+
+.u-ff--exo {
+  font-family: 'Exo';
+  font-weight: 100;
+}
+
+.u-ta--center {
+  text-align: center;
+}
+
+.u-fw--bold {
+  font-weight: bold;
+}
+
+.u-c--grey {
+  color: #666666;
+}
+
+.u-c--yellow {
+  color:#ffff66;
+}
+
+.u-mt--20 {
+  margin-top: 20px;
+}
+
+.u-mt--15 {
+  margin-top: 15px;
+}
+
+.u-f--13 {
+  font-size: 13px;
+}
