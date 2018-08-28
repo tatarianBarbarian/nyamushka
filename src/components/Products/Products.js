@@ -6,9 +6,12 @@ import Product from './Product';
 
 const ProductsBlock = styled.div`
     width: 87.5vw;
-    width: 1120px;
     margin: 0 auto;
     margin: auto;
+
+    @media (min-width: 1280px) {
+        width: 1120px;
+    }
 `;
 
 const ProductsCont = styled.div`
@@ -31,7 +34,7 @@ const data = [
     {
         taste: 'c фуа-гра',
         portions: 10,
-        bonus: '',
+        bonus: 1,
         mass: '0,5',
         description: 'Печень утки разварная с артишоками.', 
         disabled: false
@@ -39,7 +42,7 @@ const data = [
     {
         taste: 'c рыбой',
         portions: 40, 
-        bonus: '', 
+        bonus: 2, 
         mass: '2',  
         description: 'Головы щучьи с чесноком да свежайшая сёмгушка', 
         disabled: false
@@ -47,7 +50,7 @@ const data = [
     {
         taste: 'c курой',
         portions: 100, 
-        bonus: '', 
+        bonus: 5, 
         mass: '5', 
         description: 'Филе из цыплят с трюфелями в бульоне', 
         disabled: true
