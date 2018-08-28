@@ -16,10 +16,12 @@
     cursor: pointer;
     margin-bottom: 15px;
     transition: transform .3s;
+    position: relative;
 }
 
 .product__main:hover {
-    transform: scale(1.01);
+    /* transform: scale(1.01); */
+    transform: translateY(-10px);
 }
 
 .product__main:active {
@@ -47,6 +49,19 @@
     transform: scale(0.96);
 }
 
+.product__main--disabled {
+    background-image: url(./Photo3.png);
+    /* filter: grayscale(50%); */
+}
+
+.product__main--disabled:hover {
+    transform: none;
+}
+
+.product__main--disabled:active {
+    transform: none;
+}
+
 .product__slogan {
     color: #666666;
     font-size: 16px;
@@ -58,6 +73,13 @@
 
 .product__taste {
     font-size: 24px;
+}
+
+.product__mass {
+    display: inline-block;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
 }
 
 .product__buy {

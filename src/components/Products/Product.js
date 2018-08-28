@@ -11,6 +11,14 @@ class Product extends Component {
         }
     }
 
+    writeBonus = (bonus = 0) => {
+        if (bonus > 1 && bonus < 5) {
+            return {__html: `<span class="u-fw--bold">${bonus}</span> мыши в подарок`};
+        } else if (bonus >= 5) {
+            return {__html: `<span class="u-fw--bold">${bonus}</span> мышей в подарок <br /> заказчик доволен`};
+        } else return {__html: `мышь в подарок`};
+    }
+
     handleProductClick = () => {
         this.setState(Object.assign(this.state,{
             clicked: !this.state.clicked
@@ -53,7 +61,8 @@ class Product extends Component {
                         <span className="product__slogan"> Сказочное заморское яство </span>
                         <h2 className="product__title">Нямушка</h2>
                         <h3 className="product__taste">{taste}</h3>
-                        <p className="u-c--grey u-mt--20"><span className="u-fw--bold">{portions}</span> порций</p><br />
+                        <p className="u-c--grey u-mt--20 u-f--14"><span className="u-fw--bold">{portions}</span> порций</p>
+                        <p className="u-c--grey u-f--14" dangerouslySetInnerHTML={this.writeBonus(bonus)}></p>
                         <span className="product__mass">{mass} <br /><span>кг</span></span>  
                     </div>
                     <p className="u-f--13 u-c--white u-ff--exo u-ta--center">{description}</p>
@@ -62,14 +71,13 @@ class Product extends Component {
         } else if (disabled === true) {
             return(
                 <div className="product  product--disabled">
-                    <div className={`product__main`} 
-                         onClick={this.handleProductClick}
-                         onMouseLeave={this.handleMouseLeave}>
+                    <div className='product__main product__main--disabled'>
                         <span className="product__slogan"> Сказочное заморское яство </span>
                         <h2 className="product__title">Нямушка</h2>
                         <h3 className="product__taste">{taste}</h3>
-                        <p className="u-c--grey u-mt--20"><span className="u-fw--bold">{portions}</span> порций</p><br />
-                        <span className="product__mass">{mass} <br /><span>кг</span></span>  
+                        <p className="u-c--grey u-mt--20 u-f--14"><span className="u-fw--bold">{portions}</span> порций</p>
+                        <p className="u-c--grey u-f--14" dangerouslySetInnerHTML={this.writeBonus(bonus)}></p>
+                        <span className="product__mass u-f--14">{mass} <br /><span>кг</span></span>  
                     </div>
                     <p className="u-f--13 u-c--yellow u-ff--exo u-ta--center">Печалька, {taste} закончился</p>
                 </div>
@@ -83,7 +91,8 @@ class Product extends Component {
                         <span className="product__slogan"> Сказочное заморское яство </span>
                         <h2 className="product__title">Нямушка</h2>
                         <h3 className="product__taste">{taste}</h3>
-                        <p className="u-c--grey u-mt--20"><span className="u-fw--bold">{portions}</span> порций</p><br />
+                        <p className="u-c--grey u-mt--20 u-f--14"><span className="u-fw--bold">{portions}</span> порций</p>
+                        <p className="u-c--grey u-f--14" dangerouslySetInnerHTML={this.writeBonus(bonus)}></p>
                         <span className="product__mass">{mass} <br /><span>кг</span></span>  
                     </div>
                     {!clicked 
