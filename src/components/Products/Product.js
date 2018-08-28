@@ -27,8 +27,8 @@ class Product extends Component {
 
     handleBuyClick = () => {
         this.setState(Object.assign(this.state, {
-            clicked: !this.state.clicked,
-            selected: !this.state.selected
+            clicked: true,
+            selected: true
         }));
     }
 
@@ -63,7 +63,7 @@ class Product extends Component {
                         <h3 className="product__taste">{taste}</h3>
                         <p className="u-c--grey u-mt--20 u-f--14"><span className="u-fw--bold">{portions}</span> порций</p>
                         <p className="u-c--grey u-f--14" dangerouslySetInnerHTML={this.writeBonus(bonus)}></p>
-                        <span className="product__mass">{mass} <br /><span>кг</span></span>  
+                        <span className="product__mass product__mass--selected">{mass}<span className="u-f--21 u-lh--10">кг</span></span>  
                     </div>
                     <p className="u-f--13 u-c--white u-ff--exo u-ta--center">{description}</p>
                 </div>
@@ -72,12 +72,14 @@ class Product extends Component {
             return(
                 <div className="product  product--disabled">
                     <div className='product__main product__main--disabled'>
-                        <span className="product__slogan"> Сказочное заморское яство </span>
-                        <h2 className="product__title">Нямушка</h2>
-                        <h3 className="product__taste">{taste}</h3>
-                        <p className="u-c--grey u-mt--20 u-f--14"><span className="u-fw--bold">{portions}</span> порций</p>
-                        <p className="u-c--grey u-f--14" dangerouslySetInnerHTML={this.writeBonus(bonus)}></p>
-                        <span className="product__mass u-f--14">{mass} <br /><span>кг</span></span>  
+                        <div className="product__textblock">
+                            <span className="product__slogan"> Сказочное заморское яство </span>
+                            <h2 className="product__title">Нямушка</h2>
+                            <h3 className="product__taste">{taste}</h3>
+                            <p className="u-c--grey u-mt--20 u-f--14"><span className="u-fw--bold">{portions}</span> порций</p>
+                            <p className="u-c--grey u-f--14" dangerouslySetInnerHTML={this.writeBonus(bonus)}></p>
+                        </div>
+                        <span className="product__mass product__mass--disabled">{mass} <span className="u-f--21 u-lh--10">кг</span></span>  
                     </div>
                     <p className="u-f--13 u-c--yellow u-ff--exo u-ta--center">Печалька, {taste} закончился</p>
                 </div>
@@ -93,7 +95,7 @@ class Product extends Component {
                         <h3 className="product__taste">{taste}</h3>
                         <p className="u-c--grey u-mt--20 u-f--14"><span className="u-fw--bold">{portions}</span> порций</p>
                         <p className="u-c--grey u-f--14" dangerouslySetInnerHTML={this.writeBonus(bonus)}></p>
-                        <span className="product__mass">{mass} <br /><span>кг</span></span>  
+                        <span className="product__mass"><span>{mass} </span> <span className="u-f--21 u-lh--10">кг</span></span>  
                     </div>
                     {!clicked 
                        ? <p className="u-f--13 u-c--white u-ff--exo u-ta--center">Чего сидишь? Порадуй котэ, &nbsp;
