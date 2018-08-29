@@ -9,15 +9,12 @@ const ProductsBlock = styled.div`
     margin: 0 auto;
     margin: auto;
 
-    @media (min-width: 767px) {
+    @media (min-width: 1280px) {
+        width: 1120px;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-    }
-
-    @media (min-width: 1280px) {
-        width: 1120px;
     }
 `;
 
